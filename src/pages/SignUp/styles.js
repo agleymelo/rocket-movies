@@ -47,7 +47,14 @@ export const Form = styled.form`
 
     color: ${({ theme }) => theme.COLORS.PINK};
 
-    
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    gap: 0.8rem;
+
+    > svg {
+      font-size: 1.6rem;
+    }
   }
 `
 

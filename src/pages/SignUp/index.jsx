@@ -1,4 +1,4 @@
-import { FiMail, FiLock } from 'react-icons/fi'
+import { FiArrowLeft, FiMail, FiLock, FiUser } from 'react-icons/fi'
 
 import { Input } from '../../component/Input'
 import { Button } from '../../component/Button'
@@ -6,7 +6,7 @@ import { Button } from '../../component/Button'
 import * as S from './styles'
 import { Link } from 'react-router-dom'
 
-export function SignIn() {
+export function SignUp() {
   return (
     <S.Container>
       <S.Form>
@@ -14,14 +14,18 @@ export function SignIn() {
 
         <p>Aplicação para acompanhar tudo que assistir.</p>
 
-        <h2>Faça seu login</h2>
+        <h2>Crie sua conta</h2>
 
+        <Input icon={FiUser} placeholder="Nome" type="text" />
         <Input icon={FiMail} placeholder="E-mail" type="email" />
         <Input icon={FiLock} placeholder="Senha" type="password" />
 
-        <Button title="Entrar" />
+        <Button title="Cadastrar" />
 
-        <Link to="/register">Criar Conta</Link>
+        <Link to="/">
+          <FiArrowLeft />
+          Voltar para o login
+        </Link>
       </S.Form>
 
       <S.Background />

@@ -19,7 +19,7 @@ export const Container = styled.header`
 
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
 
-  > h3 {
+  > h1 {
     text-wrap: nowrap;
 
     font-size: 2.4rem;

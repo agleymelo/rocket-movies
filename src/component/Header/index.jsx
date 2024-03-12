@@ -7,7 +7,7 @@ import { Input } from '../../component/Input'
 export function Header() {
   return (
     <S.Container>
-      <h3>Rocket Movies</h3>
+      <h1>Rocket Movies</h1>
 
       <Input icon={FiSearch} placeholder="Pesquisar pelo título" type="text" />
 

@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 import { Header } from '../../component/Header'
 import { Button } from '../../component/Button'
 
@@ -13,7 +15,9 @@ export function Home() {
         <S.ContentHeader>
           <h3>Meus Filmes</h3>
 
-          <Button title="Adicionar Filme" />
+          <Link to="/new">
+            <Button title="Adicionar Filme" />
+          </Link>
         </S.ContentHeader>
 
         <S.SectionCard>

@@ -6,6 +6,7 @@ import { Textarea } from '../../component/Textarea'
 import { Header } from '../../component/Header'
 
 import * as S from './styles'
+import { MarkItem } from '../../component/MarkItem'
 
 export function New() {
   return (
@@ -30,7 +31,10 @@ export function New() {
         <S.Section>
           <h2>Marcadores</h2>
 
-          <div></div>
+          <div>
+            <MarkItem value="React" />
+            <MarkItem isNew placeholder="Novo marcador" />
+          </div>
         </S.Section>
       </S.Form>
     </S.Container>

@@ -3,6 +3,7 @@ import { FiSearch } from 'react-icons/fi'
 import * as S from './styles'
 
 import { Input } from '../../component/Input'
+import { Link } from 'react-router-dom'
 
 export function Header() {
   return (
@@ -13,7 +14,9 @@ export function Header() {
 
       <S.Profile>
         <div>
-          <strong>Agleylson Melo</strong>
+          <Link to="/profile">
+            <strong>Agleylson Melo</strong>
+          </Link>
           <span>Sair</span>
         </div>
 

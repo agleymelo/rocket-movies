@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Container = styled.header`
   grid-area: header;
@@ -42,7 +42,7 @@ export const Profile = styled.div`
     text-align: right;
     text-wrap: nowrap;
 
-    > strong {
+    > a {
       font-size: 1.4rem;
       color: ${({ theme }) => theme.COLORS.WHITE};
     }

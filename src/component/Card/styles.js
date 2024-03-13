@@ -25,16 +25,6 @@ export const Title = styled.strong`
 export const Stars = styled.div`
   margin-bottom: 1.6rem;
 
-  > svg {
-    font-size: 1.2rem;
-
-    stroke: ${({ theme }) => theme.COLORS.PINK};
-  }
-
-  .stared {
-    stroke: ${({ theme }) => theme.COLORS.PINK};
-    fill: ${({ theme }) => theme.COLORS.PINK};
-  }
 `
 
 export const Content = styled.p`

@@ -3,17 +3,16 @@ import { FiStar } from 'react-icons/fi'
 import { Tag } from '../../component/Tag'
 
 import * as S from './styles'
+import { Star } from '../Star'
 
 export function Card() {
   return (
     <S.Container>
       <S.Title>Interestellar</S.Title>
       <S.Stars>
-        <FiStar className="stared" />
-        <FiStar className="stared" />
-        <FiStar className="stared" />
-        <FiStar className="stared" />
-        <FiStar />
+        <Star isStared />
+        <Star isStared />
+        <Star />
       </S.Stars>
 
       <S.Content>

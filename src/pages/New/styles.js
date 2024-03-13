@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import { Button } from '../../component/Button'
+
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
@@ -43,7 +45,7 @@ export const Form = styled.form`
 `
 
 export const InputWrappers = styled.div`
-  margin: 4rem 0;
+  margin: 2rem 0;
 
   display: flex;
   align-items: center;
@@ -53,7 +55,7 @@ export const InputWrappers = styled.div`
 `
 
 export const Section = styled.section`
-  margin-top: 4rem;
+  margin-top: 2rem;
 
   > h2 {
     font-size: 2rem;
@@ -61,4 +63,35 @@ export const Section = styled.section`
 
     color: ${({ theme }) => theme.COLORS.GRAY_400};
   }
+  
+  > div {
+    margin-top: 2.4rem;
+    
+    background-color: ${({ theme }) => theme.COLORS.BLACK};
+    padding: 1.6rem;
+
+    display: flex;
+    align-items: center;
+    gap: 2.4rem;
+
+    border-radius: 1rem;
+  }
+`
+
+export const Buttons = styled.section`
+  margin-top: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 4rem;
+  
+`
+
+export const ButtonDelete = styled(Button)`
+  background-color: ${({ theme }) => theme.COLORS.BLACK};
+  color: ${({ theme }) => theme.COLORS.PINK};
+
+  border: none;
 `

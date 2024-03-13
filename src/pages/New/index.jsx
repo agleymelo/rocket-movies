@@ -4,6 +4,7 @@ import { FiArrowLeft } from 'react-icons/fi'
 import { Input } from '../../component/Input'
 import { Textarea } from '../../component/Textarea'
 import { Header } from '../../component/Header'
+import { Button } from '../../component/Button'
 
 import * as S from './styles'
 import { MarkItem } from '../../component/MarkItem'
@@ -36,6 +37,12 @@ export function New() {
             <MarkItem isNew placeholder="Novo marcador" />
           </div>
         </S.Section>
+
+        <S.Buttons>
+          <S.ButtonDelete title="Excluir Filme" />
+
+          <Button title="Salvar alterações" />
+        </S.Buttons>
       </S.Form>
     </S.Container>
   )

@@ -36,9 +36,10 @@ export function AuthProvider({ children }) {
 
     if (user && token) {
       api.defaults.headers.common['Authorization'] = `Bearer ${token}`
-      setData({ user, token })
+
+      setData({ user: JSON.parse(user), token })
     }
   }, [])
 
-  return <AuthContext.Provider value={{ signIn, user: data.data }}>{children}</AuthContext.Provider>
+  return <AuthContext.Provider value={{ signIn, user: data.user }}>{children}</AuthContext.Provider>
 }

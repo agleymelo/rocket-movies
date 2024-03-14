@@ -1,11 +1,19 @@
+import { Link } from 'react-router-dom'
 import { FiSearch } from 'react-icons/fi'
 
-import * as S from './styles'
+import avatarPlaceHolder from '../../assets/avatar_placeholder.svg'
 
 import { Input } from '../../component/Input'
-import { Link } from 'react-router-dom'
+import { useAuth } from '../../hooks/useAuth'
+
+import * as S from './styles'
+import { api } from '../../services/api'
 
 export function Header() {
+  const { user } = useAuth()
+
+  const avatarURL = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceHolder
+
   return (
     <S.Container>
       <h1>Rocket Movies</h1>
@@ -15,12 +23,12 @@ export function Header() {
       <S.Profile>
         <div>
           <Link to="/profile">
-            <strong>Agleylson Melo</strong>
+            <strong>{user.name}</strong>
           </Link>
           <span>Sair</span>
         </div>
 
-        <img src="https://github.com/agleymelo.png" alt="Foto de perfil" />
+        <img src={avatarURL} alt={user.name} />
       </S.Profile>
     </S.Container>
   )

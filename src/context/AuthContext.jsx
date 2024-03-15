@@ -30,6 +30,31 @@ export function AuthProvider({ children }) {
     }
   }
 
+  async function updateProfile({ user, avatarFile }) {
+    try {
+      if (avatarFile) {
+        const fileUpdateForm = new FormData()
+        fileUpdateForm.append('avatar', avatarFile)
+
+        const response = await api.patch('/users/avatar', fileUpdateForm)
+
+        user.avatar = response.data.avatar
+      }
+
+      await api.put('/users', user)
+
+      localStorage.setItem('@rocketmovies:user', JSON.stringify(user))
+
+      setData({ user, token: data.token })
+    } catch (error) {
+      if (error.response) {
+        alert(error.response.data.message)
+      } else {
+        alert('Nao foi possivel atualizar o perfil')
+      }
+    }
+  }
+
   useEffect(() => {
     const user = localStorage.getItem('@rocketmovies:user')
     const token = localStorage.getItem('@rocketmovies:token')
@@ -41,5 +66,5 @@ export function AuthProvider({ children }) {
     }
   }, [])
 
-  return <AuthContext.Provider value={{ signIn, user: data.user }}>{children}</AuthContext.Provider>
+  return <AuthContext.Provider value={{ signIn, updateProfile, user: data.user }}>{children}</AuthContext.Provider>
 }

@@ -25,12 +25,15 @@ export const Form = styled.form`
 
   margin: 4rem auto 0;
 
-  > a {
+  > button {
     display: flex;
     align-items: center;
     gap: 0.4rem;
 
     font-size: 1.6rem;
+
+    border: none;
+    background: none;
 
     color: ${({ theme }) => theme.COLORS.PINK};
   }

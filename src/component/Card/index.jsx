@@ -1,33 +1,31 @@
-import { FiStar } from 'react-icons/fi'
-
 import { Tag } from '../../component/Tag'
 
-import * as S from './styles'
 import { Star } from '../Star'
 
-export function Card() {
-  return (
-    <S.Container>
-      <S.Title>Interestellar</S.Title>
-      <S.Stars>
-        <Star isStared />
-        <Star isStared />
-        <Star />
-      </S.Stars>
+import * as S from './styles'
 
-      <S.Content>
-        Pragas nas colheitas fizeram a civilização humana regredir para uma sociedade agrária em futuro de data
-        desconhecida. Cooper, ex-piloto da NASA, tem uma fazenda com sua família. Murphy, a filha de dez anos de Cooper,
-        acredita que seu quarto está assombrado por um fantasma que tenta se comunicar com ela. Pai e filha descobrem
-        que o "fantasma" é uma inteligência desconhecida que está enviando mensagens codificadas através de radiação
-        gravitacional, deixando coordenadas em binário que os levam até uma instalação secreta da NASA liderada pelo
-        professor John Brand
-      </S.Content>
+export function Card({ data, ...rest }) {
+  let stars = []
+
+  for (let i = 1; i <= 5; i++) {
+    if (i <= data.rating) {
+      stars.push(<Star key={i} isStared />)
+    } else {
+      stars.push(<Star key={i} />)
+    }
+  }
+
+  return (
+    <S.Container {...rest}>
+      <S.Title>{data.title}</S.Title>
+      <S.Stars>{data.rating && stars}</S.Stars>
+
+      <S.Content>{data.description}</S.Content>
 
       <S.Tags>
-        <Tag title="Ficção Científica" />
-        <Tag title="Drama" />
-        <Tag title="Família" />
+        {data.tags.map((tag) => (
+          <Tag key={tag.id} title={tag.name} />
+        ))}
       </S.Tags>
     </S.Container>
   )

@@ -1,5 +1,5 @@
 import axios from 'axios'
 
 export const api = axios.create({
-  baseURL: "http://localhost:3333"
+  baseURL: "https://movie-notes-api-sju7.onrender.com"
 })
